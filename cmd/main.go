@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"math"
 	"time"
-	"workerpoll/internal"
+	"workerpoll/internal/job"
 	"workerpoll/pkg/wp"
 )
 
 func main() {
 	ctx := context.Background()
-	go runProcess(ctx, internal.GenerateJobs(1000000))
+	go runProcess(ctx, job.GenerateJobs(1000000))
 	time.Sleep(10000 * time.Second)
 }
 

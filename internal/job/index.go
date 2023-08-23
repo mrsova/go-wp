@@ -1,4 +1,4 @@
-package internal
+package job
 
 import (
 	"context"
@@ -22,7 +22,7 @@ func New(id string, value int) MainJob {
 			Id: id,
 		},
 		execFn: func(ctx context.Context, value int) (int, error) {
-			time.Sleep(100 * time.Millisecond)
+			time.Sleep(200 * time.Millisecond)
 			return value * 2, nil
 		},
 	}
